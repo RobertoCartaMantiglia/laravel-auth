@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Index</title>
+    @vite(['resources/js/app.js'])
 </head>
 <body>
     
@@ -12,10 +13,10 @@
     <table class="table table-striped table-borderless table-hover mt-5">
         <thead class="table">
             <tr>
-                <th scope="col">#id</th>
+                <th scope="col">Id</th>
                 <th scope="col">Title</th>
                 <th scope="col">Author</th>
-                <th scope="col">Used Technology</th>
+                <th scope="col">Technology</th>
                 <th scope="col">
                     <a href="" class="btn btn-sm btn-primary">
                         Create new project
@@ -31,18 +32,19 @@
                 <td>{{ $project->author }}</td>
                 <td>{{ $project->used_technology }}</td>
                 <td>
-                    <a href="{{ route('admin.posts.show', $project->id) }}" class="btn btn-sm btn-primary">
+                   <div class="d-flex justify-content-around">
+                    <a href="#" class="btn btn-xs btn-primary m-1">
                         Show
                     </a>
 
-                    <a href="" class="btn btn-sm btn-success">
+                    <a href="" class="btn btn-xs btn-warning m-1">
                         Edit
                     </a>
 
-                    <a href="" class="btn btn-sm btn-danger">
-                        Delete
-                      
+                    <a href="" class="btn btn-xs btn-danger m-1">
+                        Delete                      
                     </a>
+                   </div>
                 </td>
                 
             </tr>
