@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 mt-2">
                 <form action="{{route('admin.projects.store')}}" method="POST">
                     @csrf
                     @method('POST')
@@ -45,7 +45,7 @@
                         <label for="author" class="form-label">
                             Autore
                         </label>
-                        <input type="number" name="author" value="{{old('author', "")}}" class="form-control">
+                        <input type="text" name="author" value="{{old('author', "")}}" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label for="used_technology" class="form-label">
@@ -53,7 +53,7 @@
                         </label>
                         <input type="text" name="used_technology" value="{{old('used_technology', "")}}" class="form-control">
                     </div>
-                    <button>Aggiungi</button>
+                    <button class="btn btn-success">Aggiungi Progetto</button>
                 </form>
                             
             </div>
