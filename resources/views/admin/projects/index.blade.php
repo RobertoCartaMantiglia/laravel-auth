@@ -18,7 +18,7 @@
                 <th scope="col">Author</th>
                 <th scope="col">Technology</th>
                 <th scope="col">
-                    <a href="" class="btn btn-sm btn-primary">
+                    <a href="#" class="btn  bg-info">
                         Create new project
                     </a>
                 </th>
@@ -33,15 +33,15 @@
                 <td>{{ $project->used_technology }}</td>
                 <td>
                    <div class="d-flex justify-content-around">
-                    <a href="#" class="btn btn-xs btn-primary m-1">
+                    <a href="{{route('admin.projects.show', $project->id)}}" class="btn btn-xs btn-primary m-1">
                         Show
                     </a>
 
-                    <a href="" class="btn btn-xs btn-warning m-1">
+                    <a href="#" class="btn btn-xs btn-warning m-1">
                         Edit
                     </a>
 
-                    <a href="" class="btn btn-xs btn-danger m-1">
+                    <a href="#" class="btn btn-xs btn-danger m-1">
                         Delete                      
                     </a>
                    </div>
