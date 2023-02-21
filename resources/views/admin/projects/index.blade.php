@@ -6,9 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Index</title>
     @vite(['resources/js/app.js'])
+    
 </head>
 <body>
-    
+   @include('layouts.app') 
 <div class="container">
     <table class="table table-striped table-borderless table-hover mt-5">
         <thead class="table">

@@ -6,23 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Show</title>
     @vite(['resources/js/app.js'])
+    
 </head>
 <body>
     <div class="container">
         <div class="card text-center">
-            <div class="card-title fw-bold p-3">
+            <div class="card-title fw-bold p-3 text-uppercase">
                 {{ $project->title }}
             </div>
             <div class="card-body p-3 m-3">
-                <div>
-                    {{$project->thumb}}
+                <div class="mb-2">
+                    <img src=" {{$project->thumb}}" alt="#">                   
                 </div>
                 <div>
                     <p class="card-text mb-4">
                         {{ $project->description }}
                     </p>
                     <p class="card-text mb-4">
-                        {{ $project->author }}
+                       Author: {{ $project->author }}
                     </p>
                 </div>
                 
