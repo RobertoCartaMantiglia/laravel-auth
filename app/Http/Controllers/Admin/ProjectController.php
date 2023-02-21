@@ -7,9 +7,25 @@ use Illuminate\Http\Request;
 use App\Models\Project;
 
 
-
 class ProjectController extends Controller
 {
+    protected $validationCondition = [
+        'title' => 'required|min:2|max:100|unique:projects,title',
+        'description' => 'required|string|min:6',
+        'thumb' => 'required|url',
+        'author' => 'required|string',
+        'used_technology' => 'required|string|min:2|max:200',
+    ];
+
+    protected $messagesOfErrors = [
+        'title.required' => 'Il titolo è obblogatorio',
+        'title.min' => 'Il titolo deve contere almeno 2 caratteri',
+        'description.required' => 'La descrizione è necessaria',
+        'description.min' => 'La descrizione deve contenere minimo 6 caratteri',
+        'thumb.required' => 'L\'url della immagine è fondamentale',
+        'author.required' => 'l\'autore è necessario',
+        'used_technology.required' => 'la tecnologia utilizzata nel progetto è necessaria',
+    ];
     /**
      * Display a listing of the resource.
      *
@@ -39,7 +55,12 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate($this->validationCondition);
+        $data = $request->validate($this->messagesOfErrors);
+        $newProject = new Project();
+        $newProject->fill($data);
+        $newProject->save();
+        return redirect()->route('admin.projects.show', $newProject->id);
     }
 
     /**

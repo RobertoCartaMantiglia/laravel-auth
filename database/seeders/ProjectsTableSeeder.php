@@ -21,7 +21,7 @@ class ProjectsTableSeeder extends Seeder
         for ($i = 0; $i < 20; $i++) {
             $newProject = new Project();
             $newProject->slug = Str::slug($newProject->title);
-            $newProject->title = $faker->unique()->realTextBetween(4, 200);
+            $newProject->title = $faker->unique()->realTextBetween(4, 100);
             $newProject->description = $faker->realTextBetween(300, 1000);
             $newProject->thumb = $faker->imageUrl(640, 480, 'animals', true);
             $newProject->author = $faker->name();

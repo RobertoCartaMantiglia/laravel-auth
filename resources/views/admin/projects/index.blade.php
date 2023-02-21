@@ -19,7 +19,7 @@
                 <th scope="col">Author</th>
                 <th scope="col">Technology</th>
                 <th scope="col">
-                    <a href="#" class="btn  bg-info">
+                    <a href="{{route('admin.projects.create')}}" class="btn  bg-info">
                         Create new project
                     </a>
                 </th>

@@ -25,7 +25,7 @@
                     @endif
                     <div class="mb-3">
                         <label for="title" class="form-label">
-                            Titolo
+                            Titolo Del Progetto
                         </label>
                         <input type="text" name="title" value="{{old('title', "")}}" class="form-control">
                     </div>
