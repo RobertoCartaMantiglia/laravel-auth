@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Project;
+use Illuminate\Support\Str;
 
 
 class ProjectController extends Controller
@@ -55,8 +56,8 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->validate($this->validationCondition);
-        $data = $request->validate($this->messagesOfErrors);
+        $data = $request->validate($this->validationCondition, $this->messagesOfErrors);
+        $data['slug'] = Str::slug($data['title']);
         $newProject = new Project();
         $newProject->fill($data);
         $newProject->save();
