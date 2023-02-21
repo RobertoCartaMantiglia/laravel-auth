@@ -11,7 +11,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <form action="{{route('admin.projects.update', $projects->id)}}" method="POST">
+                <form action="{{route('admin.projects.update', $project->id)}}" method="POST">
                     @csrf
                     @method('PUT')
 
@@ -50,7 +50,7 @@
                         <label for="author" class="form-label">
                             Autore
                         </label>
-                        <input type="number" name="author" value="{{old('author') ?? $project->author}}"  class="form-control">
+                        <input type="text" name="author" value="{{old('author') ?? $project->author}}"  class="form-control">
                     </div>
                     <div class="mb-3">
                         <label for="used_technology" class="form-label">

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Project;
 use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
 
 
 class ProjectController extends Controller
@@ -81,9 +82,9 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Project $project)
     {
-        //
+        return view('admin.projects.edit', compact('project'));
     }
 
     /**
@@ -93,9 +94,15 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Project $project)
     {
-        //
+        $data = $request->validate(
+            $this->validationCondition,
+            $this->messagesOfErrors,
+            // ['title' => ['required', Rule::unique('projects')->ignore($project->id)]]
+        );
+        $project->update($data);
+        return redirect()->route('admin.projects.show', $project->id);
     }
 
     /**

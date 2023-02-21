@@ -27,7 +27,7 @@
                     </p>
                 </div>
                 
-                <a href="#" class="btn btn-success">
+                <a href="{{route('admin.projects.edit', $project->id)}}" class="btn btn-success">
                     Edit
                 </a>
                 <a href="#" class="btn btn-danger">

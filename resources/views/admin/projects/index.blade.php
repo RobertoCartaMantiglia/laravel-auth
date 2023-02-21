@@ -38,7 +38,7 @@
                         Show
                     </a>
 
-                    <a href="#" class="btn btn-xs btn-warning m-1">
+                    <a href="{{route('admin.projects.edit', $project->id)}}" class="btn btn-xs btn-warning m-1">
                         Edit
                     </a>
 
