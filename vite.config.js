@@ -9,9 +9,8 @@ export default defineConfig({
         laravel({
             // edit the first value of the array input to point to our new sass files and folder.
             input: [
-                'resources/scss/app.scss',
-                'resources/js/app.js',
-                'resources/js/confirmDelete.js'],
+                'resources/scss/app.scss', 'resources/js/app.js', 'resources/js/confirmDelete.js'
+            ],
             refresh: true,
         }),
     ],
