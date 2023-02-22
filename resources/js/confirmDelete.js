@@ -1,4 +1,4 @@
-const confirmDeleteButton = document.getElementById('delete_form');
+const confirmDeleteButton = document.getElementById("delete_form");
 
 confirmDeleteButton.forEach((elementToDelete) => {
     elementToDelete.addEventListener('submit', function (event) {
@@ -13,11 +13,12 @@ confirmDeleteButton.forEach((elementToDelete) => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                Swal.fire(
-                    'Deleted!',
-                    'Your file has been deleted.',
-                    'success'
-                )
+                this.submit(),
+                    Swal.fire(
+                        'Deleted!',
+                        'Your file has been deleted.',
+                        'success'
+                    )
             }
         })
     })

@@ -1,10 +1,10 @@
    @extends('layouts.app') 
     @section('content')
     <div class="container">
-        <table class="table table-striped table-borderless table-hover mt-5">
+        <h1 class="text-center my-4">My-Projects</h1>
+        <table class="table table-striped table-borderless table-hover">
             <thead class="table">
-                <tr>
-                    
+                <tr>                    
                     <th scope="col">Title</th>
                     <th scope="col">Author</th>
                     <th scope="col">Technology</th>

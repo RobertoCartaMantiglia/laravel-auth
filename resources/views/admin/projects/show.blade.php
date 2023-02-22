@@ -12,7 +12,7 @@
     @extends('layouts.app') 
     @section('content')
     <div class="container">
-        <div class="card text-center">
+        <div class="card text-center mt-2">
             <div class="card-title fw-bold p-3 text-uppercase">
                 {{ $project->title }}
             </div>
