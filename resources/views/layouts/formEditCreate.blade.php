@@ -1,4 +1,4 @@
-<form action="{{route($route, $project->id)}}" method="POST">
+<form action="{{route($route, $project)}}" method="POST">
     @csrf
     @method($method)
     @if($errors->any())
@@ -17,7 +17,9 @@
         <input type="text" name="title" value="{{old('title'), $project->title}}" class="form-control">
     </div>
     <div class="mb-3">
-        <label for="description" class="form-label">Descrizione</label>
+        <label for="description" class="form-label">
+            Descrizione
+        </label>
         <textarea class="form-control" name="description" rows="3">
             {{ old('description'), $project->description}}
         </textarea>
