@@ -42,8 +42,12 @@
                         Edit
                     </a>
 
-                    <a href="#" class="btn btn-xs btn-danger m-1">
-                        Delete                      
+                    <a href="#" >
+                        <form action="{{route('admin.projects.destroy', $project->id)}}" method="POST">
+                          @csrf
+                          @method('DELETE')
+                          <input type="submit" value="Delete" class="btn btn-xs btn-danger m-1">
+                        </form>                     
                     </a>
                    </div>
                 </td>
