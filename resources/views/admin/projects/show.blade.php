@@ -16,22 +16,26 @@
             </div>
             <div class="card-body p-3 m-3">
                 <div class="mb-2">
-                    <img src=" {{$project->thumb}}" alt="#">                   
+                    <img src=" {{$project->thumb}}" alt="#" class="img-fluid">                   
                 </div>
                 <div>
                     <p class="card-text mb-4">
                         {{ $project->description }}
                     </p>
                     <p class="card-text mb-4">
-                       Author: {{ $project->author }}
+                       Autore: {{ $project->author }}
                     </p>
                 </div>
                 
                 <a href="{{route('admin.projects.edit', $project->id)}}" class="btn btn-success">
                     Edit
                 </a>
-                <a href="#" class="btn btn-danger">
-                    Delete                
+                <a href="#" >
+                    <form action="{{route('admin.projects.destroy', $project->id)}}" method="POST">
+                      @csrf
+                      @method('DELETE')
+                      <input type="submit" value="Delete" class="btn btn-xs btn-danger m-1">
+                    </form>                     
                 </a>
             </div>
             
