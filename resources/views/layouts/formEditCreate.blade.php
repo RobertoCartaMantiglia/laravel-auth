@@ -1,4 +1,5 @@
-<form action="{{route($route, $project)}}" method="POST">
+
+<form action="{{route($route, $project->id)}}" method="POST">
     @csrf
     @method($method)
     
@@ -15,33 +16,33 @@
         <label for="title" class="form-label">
             Titolo del Progetto
         </label>
-        <input type="text" name="title" value="{{old('title'), $project->title}}" class="form-control">
+        <input type="text" name="title" value="{{old('title', $project->title)}}" class="form-control">
     </div>
     <div class="mb-3">
         <label for="description" class="form-label">
             Descrizione
         </label>
         <textarea class="form-control" name="description" rows="3">
-            {{ old('description'), $project->description}}
+            {{ old('description', $project->description)}}
         </textarea>
     </div> 
     <div class="mb-3">
         <label for="thumb" class="form-label">
             Immagine
         </label>
-        <input type="text" name="thumb" value="{{old('thumb'), $project->thumb}}"  class="form-control">
+        <input type="text" name="thumb" value="{{old('thumb', $project->thumb)}}"  class="form-control">
     </div>
     <div class="mb-3">
         <label for="price" class="form-label">
             Autore
         </label>
-        <input type="text" name="author" value="{{old('author'), $project->author}}"  class="form-control">
+        <input type="text" name="author" value="{{old('author', $project->author)}}"  class="form-control">
     </div>
     <div class="mb-3">
         <label for="series" class="form-label">
             Tecnologia Utilizzata
         </label>
-        <input type="text" name="used_technology" value="{{old('used_technology'), $project->used_technology}}"  class="form-control">
+        <input type="text" name="used_technology" value="{{old('used_technology', $project->used_technology)}}"  class="form-control">
     </div>
     
     <button type="submit" class="btn btn-success">Aggiungi Progetto</button>
