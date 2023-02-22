@@ -1,24 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Create</title>
-    @vite(['resources/js/app.js'])
-</head>
-<body>
-    @extends('layouts.app')
-    @section('content')
-    <div class="container">
-        <div class="row">
-            <div class="col-12 mt-2">
 
-                @include('layouts.formEditCreate', ['method'=>'POST','route'=>'admin.projects.store'])
-                            
-            </div>
+@extends('layouts.app')
+@section('content')
+<div class="container">
+    <div class="row">
+        <div class="col-12 mt-2">
+            <h1 class="text-center mt-2">Aggiungi il tuo progetto</h1>
+            @include('layouts.formEditCreate', ['method'=>'POST','route'=>'admin.projects.store'])
+                        
         </div>
     </div>
-    @endsection
-</body>
-</html>
+</div>
+@endsection
