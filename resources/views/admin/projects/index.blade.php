@@ -33,10 +33,10 @@
                         </a>
     
                         <a href="#" >
-                            <form action="{{route('admin.projects.destroy', $project->id)}}" method="POST">
+                            <form action="{{route('admin.projects.destroy', $project->id)}}" method="POST" id="delete_form">
                               @csrf
                               @method('DELETE')
-                              <input type="submit" value="Delete" id="delete_button" class="btn btn-xs btn-danger m-1">
+                              <input type="submit" value="Delete" class="btn btn-xs btn-danger m-1">
                             </form>                     
                         </a>
                        </div>
