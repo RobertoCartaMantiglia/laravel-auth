@@ -4,7 +4,7 @@
         <table class="table table-striped table-borderless table-hover mt-5">
             <thead class="table">
                 <tr>
-                    <th scope="col">Id</th>
+                    
                     <th scope="col">Title</th>
                     <th scope="col">Author</th>
                     <th scope="col">Technology</th>
@@ -18,7 +18,7 @@
             <tbody>
                 @foreach ($projects as $project)
                 <tr>
-                    <td>{{ $project->id }}</td>
+                   
                     <td>{{ $project->title }}</td>
                     <td>{{ $project->author }}</td>
                     <td>{{ $project->used_technology }}</td>
@@ -36,7 +36,7 @@
                             <form action="{{route('admin.projects.destroy', $project->id)}}" method="POST">
                               @csrf
                               @method('DELETE')
-                              <input type="submit" value="Delete" id=" delete_button" class="btn btn-xs btn-danger m-1">
+                              <input type="submit" value="Delete" id="delete_button" class="btn btn-xs btn-danger m-1">
                             </form>                     
                         </a>
                        </div>

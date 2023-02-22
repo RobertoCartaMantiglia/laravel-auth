@@ -9,6 +9,8 @@
     
 </head>
 <body>
+    @extends('layouts.app') 
+    @section('content')
     <div class="container">
         <div class="card text-center">
             <div class="card-title fw-bold p-3 text-uppercase">
@@ -30,16 +32,13 @@
                 <a href="{{route('admin.projects.edit', $project->id)}}" class="btn btn-success">
                     Edit
                 </a>
-                <a href="#" >
-                    <form action="{{route('admin.projects.destroy', $project->id)}}" method="POST">
-                      @csrf
-                      @method('DELETE')
-                      <input type="submit" value="Delete" class="btn btn-xs btn-danger m-1">
-                    </form>                     
+                <a href="{{route('admin.projects.index')}}" class="btn btn-primary">
+                     Indietro                    
                 </a>
             </div>
             
           </div>
     </div>
+   @endsection
 </body>
 </html>
