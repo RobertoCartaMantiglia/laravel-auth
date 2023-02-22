@@ -13,6 +13,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 mt-2">
+                
                 @include('layouts.formEditCreate', ['method'=>'POST','route'=>'admin.projects.store'])
                             
             </div>
