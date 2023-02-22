@@ -8,13 +8,16 @@
     @vite(['resources/js/app.js'])
 </head>
 <body>
+    @extends('layouts.app')
+    @section('content')
     <div class="container">
         <div class="row">
             <div class="col-12 mt-2">
-                @include('layouts.formEditCreate', ['route'=>'admin.projects.store', 'method'=>'POST'])
+                @include('layouts.formEditCreate', ['method'=>'POST','route'=>'admin.projects.store'])
                             
             </div>
         </div>
     </div>
+    @endsection
 </body>
 </html>

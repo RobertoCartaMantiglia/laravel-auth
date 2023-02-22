@@ -1,6 +1,7 @@
 <form action="{{route($route, $project)}}" method="POST">
     @csrf
     @method($method)
+    
     @if($errors->any())
     <div class="alert alert-danger mt-3">
         <ul>
