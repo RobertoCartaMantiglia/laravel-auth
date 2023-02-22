@@ -96,11 +96,11 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
-        $data = $request->validate(
-            $this->validationCondition,
-            $this->messagesOfErrors,
-            // ['title' => ['required', Rule::unique('projects')->ignore($project->id)]]
-        );
+        //salvo le precedenti regole di validazione in una nuova variabile che mi servirà durante l'update
+        $newCondition = $this->validationCondition;
+        //riconfermo le regole precedenti e aggiungo 'esclusione della unique
+        $newCondition['title'] = ['required', 'min:2', 'max:100', Rule::unique('projects')->ignore($project->id)];
+        $data = $request->validate($newCondition, $this->messagesOfErrors);
         $project->update($data);
         return redirect()->route('admin.projects.show', $project->id);
     }
