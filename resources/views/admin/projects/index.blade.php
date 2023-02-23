@@ -33,6 +33,7 @@
                         </a>
     
                         <a href="#" >
+                            
                             <form action="{{route('admin.projects.destroy', $project->id)}}" method="POST" id="delete_form">
                               @csrf
                               @method('DELETE')
@@ -48,4 +49,7 @@
         </table>
     </div>
     
+    @endsection
+    @section('script')
+        @vite('resources/js/confirmDelete.js')
     @endsection

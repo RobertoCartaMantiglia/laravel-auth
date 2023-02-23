@@ -91,8 +91,11 @@
 
         <main class="">
             @yield('content')
+            @yield('script')
+   
         </main>
     </div>
+
 </body>
 
 </html>
