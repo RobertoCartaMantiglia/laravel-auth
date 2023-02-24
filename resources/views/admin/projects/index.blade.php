@@ -34,7 +34,7 @@
     
                         <a href="#" >
                             
-                            <form action="{{route('admin.projects.destroy', $project->id)}}" method="POST" id="delete_form">
+                            <form action="{{route('admin.projects.destroy', $project->id)}}" method="POST" class="delete_form">
                               @csrf
                               @method('DELETE')
                               <input type="submit" value="Delete" class="btn btn-xs btn-danger m-1">
