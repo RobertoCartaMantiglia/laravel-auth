@@ -105,6 +105,7 @@ class ProjectController extends Controller
         //riconfermo le regole precedenti e aggiungo 'esclusione della unique
         $newCondition['title'] = ['required', 'min:2', 'max:100', Rule::unique('projects')->ignore($project->id)];
         $data = $request->validate($newCondition, $this->messagesOfErrors);
+        $data['thumb'] = Storage::put('imgs/', $data['thumb']);
         $project->update($data);
         return redirect()->route('admin.projects.show', $project->id);
     }
