@@ -58,6 +58,7 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
+
         $data = $request->validate($this->validationCondition, $this->messagesOfErrors);
         $data['slug'] = Str::slug($data['title']);
         $newProject = new Project();
@@ -74,6 +75,7 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
+        // dd($project);
         return view('admin.projects.show', compact('project'));
     }
 

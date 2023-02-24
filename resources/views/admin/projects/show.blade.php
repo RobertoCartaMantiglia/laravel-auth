@@ -18,7 +18,7 @@
             </div>
             <div class="card-body p-3 m-3">
                 <div class="mb-2">
-                    <img src=" {{$project->thumb}}" alt="#" class="img-fluid">                   
+                    <img src=" {{asset('storage/' . $project->thumb)}}" alt="#" class="img-fluid">                   
                 </div>
                 <div>
                     <p class="card-text mb-4">

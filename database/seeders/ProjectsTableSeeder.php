@@ -7,6 +7,7 @@ use App\Models\Project;
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectsTableSeeder extends Seeder
 {
@@ -23,7 +24,7 @@ class ProjectsTableSeeder extends Seeder
             $newProject->slug = Str::slug($newProject->title);
             $newProject->title = $faker->unique()->realTextBetween(4, 100);
             $newProject->description = $faker->realTextBetween(300, 1000);
-            $newProject->thumb = $faker->imageUrl(640, 480, 'animals', true);
+            $newProject->thumb = 'staticImage.jpg';
             $newProject->author = $faker->name();
             $newProject->used_technology = $faker->name();
             $newProject->save();

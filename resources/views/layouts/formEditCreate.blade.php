@@ -30,7 +30,7 @@
         <label for="thumb" class="form-label">
             Immagine
         </label>
-        <input type="text" name="thumb" value="{{old('thumb', $project->thumb)}}"  class="form-control">
+        <input type="file" name="thumb" value="{{old('thumb', $project->thumb)}}"  class="form-control">
     </div>
     <div class="mb-3">
         <label for="price" class="form-label">
