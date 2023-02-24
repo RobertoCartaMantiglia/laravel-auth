@@ -15,7 +15,7 @@ class ProjectController extends Controller
     protected $validationCondition = [
         'title' => 'required|min:2|max:100|unique:projects,title',
         'description' => 'required|string|min:6',
-        'thumb' => 'required|url',
+        'thumb' => 'required|image',
         'author' => 'required|string',
         'used_technology' => 'required|string|min:2|max:200',
     ];
@@ -61,6 +61,7 @@ class ProjectController extends Controller
 
         $data = $request->validate($this->validationCondition, $this->messagesOfErrors);
         $data['slug'] = Str::slug($data['title']);
+        $data['thumb'] = Storage::put('imgs/', $data['thumb']);
         $newProject = new Project();
         $newProject->fill($data);
         $newProject->save();
