@@ -1,5 +1,5 @@
 
-<form action="{{route($route, $project->id)}}" method="POST">
+<form action="{{route($route, $project->id)}}" method="POST" enctype="multipart/form-data">
     @csrf
     @method($method)
     
